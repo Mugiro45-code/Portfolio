@@ -1,0 +1,14 @@
+.footer-section {
+  background: linear-gradient(90deg, #22223b 60%, #2575fc 100%);
+  color: #fff;
+  border-radius: 1.2rem 1.2rem 0 0;
+}
+.footer-link {
+  color: #ffd700;
+  margin-left: 0.5rem;
+  font-size: 1.2rem;
+  transition: color 0.2s;
+}
+.footer-link:hover {
+  color: #fff;
+}

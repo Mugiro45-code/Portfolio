@@ -1,0 +1,228 @@
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background: #f8f9fa;
+    color: #333;
+    line-height: 1.6;
+}
+
+header {
+    background: #35424a;
+    color: #ffffff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5em;
+}
+
+nav {
+    margin: 20px 0;
+}
+
+nav a {
+    color: #ffffff;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 1.2em;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: #e8491d;
+}
+
+section {
+    padding: 20px;
+    margin: 20px;
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    color: #35424a;
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+}
+
+footer {
+    text-align: center;
+    padding: 10px 0;
+    background: #35424a;
+    color: #ffffff;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.fade-in {
+    animation: fadeIn 1s ease-in;
+}
+
+.project {
+    margin: 20px 0;
+    transition: transform 0.3s;
+}
+
+.project:hover {
+    transform: scale(1.05);
+}
+
+.card {
+    border-radius: 1rem;
+    transition: transform 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-5px) scale(1.03);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+}
+
+.portfolio-card {
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.portfolio-card:hover {
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.15);
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-form input,
+.contact-form textarea {
+    margin: 10px 0;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.contact-form button {
+    padding: 10px;
+    background: #e8491d;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.contact-form button:hover {
+    background: #35424a;
+}
+
+.glass-main {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 48px 0 32px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+  position: relative;
+  z-index: 1;
+}
+
+.glass-section {
+  background: rgba(255, 255, 255, 0.65);
+  border-radius: 28px;
+  box-shadow: 0 8px 40px 0 rgba(44, 62, 80, 0.13), 0 1.5px 8px 0 rgba(108,99,255,0.08);
+  backdrop-filter: blur(24px) saturate(180%);
+  border: 1.5px solid rgba(108, 99, 255, 0.13);
+  padding: 48px 40px;
+  margin-bottom: 0;
+  transition: box-shadow 0.35s cubic-bezier(.4,2,.6,1), transform 0.25s cubic-bezier(.4,2,.6,1);
+  will-change: transform, box-shadow;
+  position: relative;
+  overflow: hidden;
+}
+
+.glass-section:hover {
+  box-shadow: 0 16px 64px 0 rgba(44, 62, 80, 0.18), 0 3px 16px 0 rgba(108,99,255,0.13);
+  transform: translateY(-6px) scale(1.025);
+  background: rgba(255,255,255,0.82);
+}
+
+.glass-section h2 {
+  display: flex;
+  align-items: center;
+  font-size: 2.1rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  margin-bottom: 1.5rem;
+  color: #22223b;
+  text-shadow: 0 2px 8px rgba(108,99,255,0.07);
+}
+
+.glass-section::before {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 32px;
+  top: 24px;
+  width: 48px;
+  height: 6px;
+  border-radius: 3px;
+  background: linear-gradient(90deg, #6c63ff, #43e97b, #38f9d7, #e8491d, #6c63ff);
+  background-size: 300% 100%;
+  animation: accentBarMove 6s linear infinite;
+  z-index: 2;
+  opacity: 0.85;
+}
+
+.glass-section:not(:last-child)::after {
+  content: "";
+  display: block;
+  margin: 40px auto 0 auto;
+  width: 60px;
+  height: 4px;
+  border-radius: 2px;
+  background: linear-gradient(90deg, #6c63ff, #43e97b, #e8491d);
+  opacity: 0.15;
+}
+
+@keyframes accentBarMove {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 100% 50%; }
+}
+
+@media (max-width: 700px) {
+  .glass-main {
+    padding: 16px 0 8px 0;
+    gap: 18px;
+  }
+  .glass-section {
+    padding: 18px 8px;
+    border-radius: 14px;
+  }
+  .glass-section::before {
+    left: 12px;
+    top: 10px;
+    width: 32px;
+    height: 4px;
+  }
+  .glass-section,
+  .container {
+    margin-top: 24px;
+    margin-bottom: 24px;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 100px; /* Adjust this value to match your header height */
+}

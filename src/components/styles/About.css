@@ -1,0 +1,38 @@
+.about-section {
+  background: #f8fafc;
+  border-radius: 5px;
+  padding: 2rem 1rem;
+}
+.about-avatar {
+  width: 160px;      /* Increased from 160px */
+  height: 160px;     /* Increased from 160px */
+  object-fit: cover;
+  border-radius: 10px; /* Use 0 for sharp corners, 18px for soft corners */
+  border: 6px solid #fff;
+  box-shadow: 0 4px 24px rgba(44,62,80,0.10);
+  transition: transform 0.3s;
+}
+.about-avatar:hover {
+  transform: scale(1.08) rotate(-2deg); /* Increased scale for more zoom */
+}
+.about-card {
+  background: #fff;
+  border-radius: 5px;
+}
+.timeline {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+.timeline li {
+  font-size: 0.9rem;
+  position: relative;
+  padding-left: 1.0rem;
+  margin-bottom: 0.8rem;
+  color: #22223b;
+}
+.timeline li span {
+  font-weight: 600;
+  color: #2575fc;
+  margin-right: 0.5rem;
+}

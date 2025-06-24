@@ -1,0 +1,44 @@
+.section-title {
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: #22223b;
+  text-align: center;
+}
+
+.skill-card {
+  background: #fff;
+  border-radius: 1.2rem;
+  padding: 2rem 1rem 1.2rem 1rem;
+  text-align: center;
+  transition: transform 0.2s, box-shadow 0.2s;
+  cursor: pointer;
+  min-height: 180px;
+  box-shadow: 0 2px 12px rgba(34, 34, 59, 0.06);
+  position: relative;
+  overflow: hidden;
+}
+
+.skill-card:hover {
+  transform: translateY(-8px) scale(1.05);
+  box-shadow: 0 8px 32px rgba(34, 34, 59, 0.15);
+  background: linear-gradient(135deg, #f8fafc 60%, #e0e7ff 100%);
+}
+
+.icon-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60px;
+  transition: transform 0.2s;
+}
+
+.skill-card:hover .icon-wrapper {
+  transform: scale(1.15) rotate(-6deg);
+}
+
+.skill-card h5 {
+  font-weight: 600;
+  margin-top: 1rem;
+  color: #22223b;
+  letter-spacing: 1px;
+}

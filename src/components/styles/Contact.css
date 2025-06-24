@@ -1,0 +1,29 @@
+.contact-form {
+  border-radius: 1.2rem;
+  background: #fff;
+}
+.form-floating > .form-control:focus ~ label,
+.form-floating > .form-control:not(:placeholder-shown) ~ label {
+  opacity: 0.85;
+  transform: scale(0.85) translateY(-1.5rem) translateX(0.15rem);
+}
+.social-icons a {
+  display: inline-block;
+  margin: 0 8px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.social-icons a:hover {
+  transform: translateY(-4px) scale(1.15);
+  box-shadow: 0 4px 16px rgba(67, 233, 123, 0.15);
+}
+.contact-social-icon {
+  color: #555;
+  font-size: 2rem;
+  margin: 0 10px;
+  transition: color 0.2s;
+  vertical-align: middle;
+}
+.contact-social-icon:hover {
+  color: #38f9d7;
+  transition: color 0.2s;
+}
