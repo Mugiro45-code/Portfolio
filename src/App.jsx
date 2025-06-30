@@ -64,7 +64,7 @@ function App() {
                 key={id}
                 className="glass-section"
                 data-aos="fade-up"
-                data-aos-delay={idx * 100}
+                data-aos-delay={idx * 60} // Reduced from 100 to 60 for snappier UX
               >
                 <Comp />
               </section>

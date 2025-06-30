@@ -72,17 +72,6 @@ const Contact = () => {
               </div>
             )}
           </form>
-          <div className="social-icons text-center mt-4">
-            <a href="https://www.linkedin.com/in/mugilan-developer" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
-              <LinkedInIcon className="contact-social-icon" />
-            </a>
-            <a href="https://www.instagram.com/mugiro_45/" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
-              <InstagramIcon className="contact-social-icon" />
-            </a>
-            <a href="mailto:mugi.developer@gmail.com" aria-label="Email">
-              <EmailIcon className="contact-social-icon" />
-            </a>
-          </div>
         </div>
       </div>
     </section>

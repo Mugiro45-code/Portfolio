@@ -1,7 +1,8 @@
 .footer-section {
   background: linear-gradient(90deg, #22223b 60%, #2575fc 100%);
   color: #fff;
-  border-radius: 1.2rem 1.2rem 0 0;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
 }
 .footer-link {
   color: #ffd700;
@@ -11,4 +12,21 @@
 }
 .footer-link:hover {
   color: #fff;
+}
+.footer-social-icon {
+  transition: color 0.2s, transform 0.2s;
+}
+.footer-social-icon:hover {
+  color: #ffd700 !important;
+  transform: translateY(-2px) scale(1.15);
+}
+.footer-social-icon:focus {
+  outline: 2px solid #ffd700;
+  outline-offset: 2px;
+}
+@media (max-width: 600px) {
+  .footer-section {
+    padding-top: 2rem !important;
+    padding-bottom: 2rem !important;
+  }
 }

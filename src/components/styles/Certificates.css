@@ -15,14 +15,15 @@
 }
 
 .certificate-title {
-  font-size: 1.1rem;
-  font-weight: 600;
+  font-size: 1.13rem;
+  font-weight: 700;
   color: #5a28d6;
   word-break: break-word;
+  letter-spacing: 0.01em;
 }
 
 .certificate-description {
-  font-size: 1.01em;
+  font-size: 1.04em;
   color: #333;
   margin-bottom: 0.5em;
   word-break: break-word;
@@ -38,10 +39,10 @@
 }
 
 .certificate-meta {
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
+  font-size: 0.98em;
   gap: 0.7em;
+  margin-top: auto;
+  text-align: left;
 }
 
 .certificate-badge {
@@ -170,5 +171,13 @@
   .btn.btn-primary {
     width: 100%;
     margin-top: 0.5em;
+  }
+}
+
+/* Tablet stacking for certificate cards */
+@media (max-width: 991px) {
+  .col-md-6.col-lg-5 {
+    flex: 0 0 100%;
+    max-width: 100%;
   }
 }
