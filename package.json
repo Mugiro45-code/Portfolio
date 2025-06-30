@@ -7,6 +7,7 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
+    "predeploy": "npm run build",
     "deploy": "gh-pages -d dist"
   },
   "keywords": [
@@ -30,9 +31,10 @@
     "react-router-dom": "^7.6.2",
     "react-tsparticles": "^2.12.2"
   },
-  "homepage": "https://YOUR-USERNAME.github.io/my-portfolio",
+  "homepage": "https://Mugiro45-code.github.io/Portfolio",
   "devDependencies": {
     "@vitejs/plugin-react": "^4.6.0",
+    "gh-pages": "^6.3.0",
     "vite": "^6.3.5"
   }
 }

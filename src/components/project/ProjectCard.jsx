@@ -7,7 +7,7 @@ function ProjectCard({ project }) {
     <div className="portfolio-card shadow-sm animate__animated animate__zoomIn">
       <div className="portfolio-img-wrapper">
         <img
-          src={project.image}
+          src={`${import.meta.env.BASE_URL}${project.image.replace(/^\/+/, '')}`}
           alt={project.title}
           className="portfolio-img"
         />

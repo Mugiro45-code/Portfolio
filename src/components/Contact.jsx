@@ -22,7 +22,7 @@ const Contact = () => {
   };
 
   return (
-    <section className="container my-5 animate__animated animate__fadeIn">
+    <section id="contact" className="container my-5 animate__animated animate__fadeIn">
       <h2 className="section-title mb-2">
         <MailOutlineIcon style={{ color: '#38f9d7', fontSize: 32, marginRight: 12, verticalAlign: 'middle' }} />
         Contact

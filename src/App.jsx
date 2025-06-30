@@ -1,9 +1,8 @@
-import React, { useEffect, useRef } from 'react';
-import { motion, useAnimation, useInView } from 'framer-motion';
+import React, { useEffect } from 'react';
+import { Routes, Route } from 'react-router-dom';
 import Particles from 'react-tsparticles';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-import { Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
 import About from './components/About';
 import Skills from './components/Skills';
@@ -11,68 +10,21 @@ import Contact from './components/Contact';
 import Footer from './components/Footer';
 import ProjectSection from "./components/project/ProjectSection";
 import ProjectDetails from "./components/project/ProjectDetails";
+import Certificates from './components/Certificates';
 import './components/styles/main.css';
 
 const sections = [
   { Comp: About, id: "about" },
   { Comp: Skills, id: "skills" },
+  { Comp: Certificates, id: "certificates" },
   { Comp: ProjectSection, id: "portfolio" },
   { Comp: Contact, id: "contact" }
 ];
-
-function AnimatedSection({ children, id, custom, variants }) {
-  const ref = useRef(null);
-  const inView = useInView(ref, { amount: 0.3 });
-  const controls = useAnimation();
-
-  useEffect(() => {
-    if (inView) {
-      controls.start('visible');
-    } else {
-      controls.start('hidden');
-    }
-  }, [inView, controls]);
-
-  return (
-    <motion.section
-      ref={ref}
-      id={id}
-      className="glass-section"
-      custom={custom}
-      variants={variants}
-      initial="hidden"
-      animate={controls}
-      whileHover="hover"
-    >
-      {children}
-    </motion.section>
-  );
-}
 
 function App() {
   useEffect(() => {
     AOS.init({ duration: 1000 });
   }, []);
-
-  const sectionVariants = {
-    hidden: { opacity: 0, y: 60, scale: 0.98 },
-    visible: (i = 0) => ({
-      opacity: 1,
-      y: 0,
-      scale: 1,
-      transition: {
-        delay: i * 0.2,
-        duration: 0.9,
-        type: 'spring',
-        stiffness: 60,
-      },
-    }),
-    hover: {
-      scale: 1.025,
-      boxShadow: '0 8px 32px rgba(0,0,0,0.12)',
-      transition: { duration: 0.3 },
-    },
-  };
 
   return (
     <>
@@ -106,15 +58,16 @@ function App() {
       <Routes>
         <Route path="/" element={
           <main className="glass-main">
-            {sections.map(({ Comp, id }, i) => (
-              <AnimatedSection
-                key={Comp.name}
+            {sections.map(({ Comp, id }, idx) => (
+              <section
                 id={id}
-                custom={i}
-                variants={sectionVariants}
+                key={id}
+                className="glass-section"
+                data-aos="fade-up"
+                data-aos-delay={idx * 100}
               >
                 <Comp />
-              </AnimatedSection>
+              </section>
             ))}
           </main>
         } />

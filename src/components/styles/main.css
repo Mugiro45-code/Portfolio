@@ -138,23 +138,21 @@ footer {
 }
 
 .glass-section {
-  background: rgba(255, 255, 255, 0.65);
-  border-radius: 28px;
-  box-shadow: 0 8px 40px 0 rgba(44, 62, 80, 0.13), 0 1.5px 8px 0 rgba(108,99,255,0.08);
-  backdrop-filter: blur(24px) saturate(180%);
-  border: 1.5px solid rgba(108, 99, 255, 0.13);
-  padding: 48px 40px;
-  margin-bottom: 0;
-  transition: box-shadow 0.35s cubic-bezier(.4,2,.6,1), transform 0.25s cubic-bezier(.4,2,.6,1);
-  will-change: transform, box-shadow;
+  background: rgba(255,255,255,0.7);
+  border-radius: 18px;
+  box-shadow: 0 8px 32px 0 rgba(31,38,135,0.12);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255,255,255,0.18);
+  margin: 32px 0;
+  padding: 32px 24px;
   position: relative;
   overflow: hidden;
+  transition: box-shadow 0.3s;
 }
 
 .glass-section:hover {
-  box-shadow: 0 16px 64px 0 rgba(44, 62, 80, 0.18), 0 3px 16px 0 rgba(108,99,255,0.13);
-  transform: translateY(-6px) scale(1.025);
-  background: rgba(255,255,255,0.82);
+  box-shadow: 0 12px 40px 0 rgba(67, 233, 123, 0.15);
 }
 
 .glass-section h2 {
@@ -208,6 +206,7 @@ footer {
   .glass-section {
     padding: 18px 8px;
     border-radius: 14px;
+    margin: 18px 0;
   }
   .glass-section::before {
     left: 12px;
@@ -224,5 +223,11 @@ footer {
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 100px; /* Adjust this value to match your header height */
+  scroll-padding-top: 70px; /* Adjust to match your header height */
+}
+
+main.glass-main {
+  max-width: 900px; /* Reduce from 1100px to 900px */
+  margin: 0 auto;
+  padding: 0 16px;
 }

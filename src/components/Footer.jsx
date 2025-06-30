@@ -9,7 +9,7 @@ const Footer = () => (
       <small>
         &copy; {new Date().getFullYear()} Mugilan. All rights reserved.
         <span className="ms-2">
-          <a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer" className="footer-link">
+          <a href="https://github.com/Mugiro45-code" target="_blank" rel="noopener noreferrer" className="footer-link">
             <GitHubIcon style={{ fontSize: 22, color: "#fff", verticalAlign: "middle" }} />
           </a>
         </span>

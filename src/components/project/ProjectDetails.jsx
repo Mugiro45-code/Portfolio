@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { useParams, Link } from "react-router-dom";
+import { useParams, Link, useNavigate, useLocation } from "react-router-dom";
 import projects from "../projectsData";
 
 function ProjectDetails() {
@@ -10,6 +10,22 @@ function ProjectDetails() {
 
   const { projectId } = useParams();
   const project = projects.find((p) => p.id === projectId);
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  const handleBackToProjects = (e) => {
+    e.preventDefault();
+    if (location.pathname !== "/") {
+      navigate("/");
+      setTimeout(() => {
+        const el = document.getElementById("portfolio");
+        if (el) el.scrollIntoView({ behavior: "smooth" });
+      }, 100);
+    } else {
+      const el = document.getElementById("portfolio");
+      if (el) el.scrollIntoView({ behavior: "smooth" });
+    }
+  };
 
   if (!project)
     return (
@@ -21,7 +37,7 @@ function ProjectDetails() {
       </div>
     );
 
-  const imageSrc = project.image || "/assets/placeholder.jpg";
+  const imageSrc = `${import.meta.env.BASE_URL}${(project.image || '/assets/placeholder.jpg').replace(/^\/+/, '')}`;
 
   // Extract bullet points from description (if any)
   const [mainDesc, ...features] = project.description.split("Key Features:");
@@ -41,8 +57,12 @@ function ProjectDetails() {
     >
       <div className="card shadow-lg w-100" style={{ maxWidth: 700 }}>
         <div className="card-body px-4 py-4">
-          <a href="/" className="btn btn-secondary mb-3">
-            ← Back to Portfolio
+          <a
+            href="#portfolio"
+            className="btn btn-secondary mb-3"
+            onClick={handleBackToProjects}
+          >
+            ← Back to My Projects
           </a>
           <h2 className="mb-3 text-center fw-bold" style={{ color: "#5a28d6" }}>
             {project.title}
@@ -52,7 +72,7 @@ function ProjectDetails() {
             alt={project.title}
             className="img-fluid rounded mb-4 d-block mx-auto"
             onError={(e) => {
-              e.target.src = "/assets/placeholder.jpg";
+              e.target.src = `${import.meta.env.BASE_URL}assets/placeholder.jpg`;
             }}
             style={{ maxHeight: "320px", objectFit: "cover" }}
           />
